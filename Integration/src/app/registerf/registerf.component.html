@@ -1,0 +1,36 @@
+<div class="login-container">
+  <div class="login-box">
+    <h2>Welcome, Newcomer</h2>
+    <form #register="ngForm" (ngSubmit)="submit()">
+      <div class="input-group">
+        <input type="text" name="name" placeholder="Name" [(ngModel)]="user.name" ngModel
+          #name="ngModel" required pattern="[A-Za-z]+ [A-Za-z]+"/>
+      </div>
+      <div *ngIf="name.invalid && name.touched">
+        <div *ngIf="name.errors?.['required']">Name field is obligatory</div>
+        <div *ngIf="name.errors?.['pattern']"> Name must contain only letters and two words</div>
+      </div>
+
+      <div class="input-group">
+        <input type="email" name="email" placeholder="Email" [(ngModel)]="user.email" ngModel
+          #email="ngModel" required pattern="[A-Za-z0-9]+@[A-Za-z0-9]+.[A-Za-z]{2,4}"/>
+      </div>
+      <div *ngIf="email.invalid && email.touched">
+        <div *ngIf="email.errors?.['required']">Email field is required</div>
+        <div *ngIf="email.errors?.['pattern']">This email seems incorrect</div>
+      </div>
+
+      <div class="input-group">
+        <input type="password" name="password" placeholder="Password" [(ngModel)]="user.password" ngModel
+          #password="ngModel" required pattern="[A-Za-z0-9]{8,}"/>
+      </div>
+      <div *ngIf="password.invalid && password.touched">
+        <div *ngIf="password.errors?.['required']">Password field is required</div>
+        <div *ngIf="password.errors?.['pattern']">Password must be at least 8 characters</div>
+      </div>
+
+      <button type="submit" [disabled]="register.invalid">Register</button>
+    </form>
+    <div class="switch-link" routerLink="/login">Already have an account? Log In</div>
+  </div>
+</div>

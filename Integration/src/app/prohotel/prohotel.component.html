@@ -1,0 +1,27 @@
+<div class="hotel-detail" *ngIf="hotel">
+  <img src="assets/images/{{hotel.imageUrl}}.jpg" alt="{{ hotel.name }}" class="hotel-detail-image" />
+
+  <div class="hotel-detail-info">
+    <h2>{{ hotel.name }}</h2>
+    <p><strong>Bathrooms:</strong> {{hotel.bathroom}}</p>
+    <p><strong>Bedrooms:</strong> {{hotel.bedroom}}</p>
+    <p><strong>Price:</strong> ${{hotel.price}} per month</p>
+
+    <form (ngSubmit)="createBooking()">
+      <label>
+        Check-in Date:
+        <input type="date" [(ngModel)]="booking.checkIn" name="checkIn" required />
+      </label>
+
+      <label>
+        Check-out Date:
+        <input type="date" [(ngModel)]="booking.checkOut" name="checkOut" required />
+      </label>
+
+
+      <a routerLink="/listing" class="btn btn-secondary">← Back to all hotels</a>
+
+      <button class="btn btn-primary" [disabled]="!booking.checkIn || !booking.checkOut">Book Now</button>
+    </form>
+  </div>
+</div>

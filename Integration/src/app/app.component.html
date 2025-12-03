@@ -1,0 +1,31 @@
+<header class="header-area">
+  <div class="container">
+    <nav class="main-nav">
+
+      <div class="logo">
+        <h1>Roilshire Hotel</h1>
+      </div>
+
+      <ul class="nav">
+        <li><a routerLink="/home">Home</a></li>
+        <li><a routerLink="/listing">Rooms</a></li>
+        <li *ngIf="!user?.token">
+          <div class="main-white-button register"><a routerLink="/register">Register</a></div>
+        </li>
+        <li *ngIf="!user?.token">
+          <div class="main-white-button login"><button routerLink="/login">Login</button></div>
+        </li>
+        <li *ngIf="user?.token">
+          <div><a routerLink="/profile">{{user.name}}</a></div>
+        </li>
+        <li *ngIf="user?.token">
+          <div class="main-white-button register"><button (click)="logout()">Logout</button></div>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<router-outlet></router-outlet>
+
+<footer>© 2025 Roilshire Hotel. All Rights Reserved</footer>

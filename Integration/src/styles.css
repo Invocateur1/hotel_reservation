@@ -1,0 +1,27 @@
+/* Common styles that will be applied globally */
+
+
+button {
+  font-family:'Arial', sans-serif;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color:#C8A855;
+  color: #0A1A2F;
+}
+
+a {
+  text-decoration: none;
+  color:#0A1A2F;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color:#C8A855;
+}
