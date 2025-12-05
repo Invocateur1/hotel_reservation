@@ -79,12 +79,10 @@ cd backend
 npm install
 
 # 3. Installez les dépendances du frontend
-cd ../frontend
+cd ../Integration
 npm install
 
 # 4. Assurez-vous que MongoDB fonctionne
-# Si vous utilisez Docker et docker-compose, lancez simplement :
-docker compose up
 
 # 5. Démarrez le serveur backend
 cd ../backend
