@@ -89,5 +89,5 @@ cd ../backend
 npm start
 
 # 6. Démarrez le serveur frontend (Angular)
-cd ../frontend
+cd ../Integration
 ng serve
